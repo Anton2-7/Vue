@@ -4,7 +4,7 @@
             <TodoItem
         v-for="todo of todos"
         v-bind:key="todo"
-        todo="todo"
+        :todo="todo"
         />
         </ul>
     </div>
