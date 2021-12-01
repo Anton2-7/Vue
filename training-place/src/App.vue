@@ -5,7 +5,10 @@
       @add-todo="AddTodo"
     />
     <hr>
-    <TodoList v-bind:todos="todos" @remove-todo="removeTodo" />
+    <TodoList
+     v-bind:todos="todos" 
+     @remove-todo="removeTodo"
+     />
   </div>
 </template>
 
