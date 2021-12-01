@@ -1,21 +1,36 @@
 <template>
-    <div>
-        <ul>
-            <TodoItem
+  <div>
+    <ul>
+      <TodoItem
         v-for="todo of todos"
         v-bind:key="todo"
-        todo="todo"
-        />
-        </ul>
-    </div>
+        :todo="todo"
+        v-on:remove-todo="removeTodo"
+      />
+    </ul>
+  </div>
 </template>
 
 <script>
-import TodoItem from '@/components/TodoItem'
+import TodoItem from "@/components/TodoItem";
 export default {
-    props: ['todos'],
-    components: {
-        TodoItem
-    }
-}
+  props: ["todos"],
+  components: {
+    TodoItem,
+  },
+  methods: {
+    removeTodo(id) {
+      console.log(id);
+      this.$emit("remove-todo", id);
+    },
+  },
+};
 </script>
+
+<style scoped>
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+</style>
